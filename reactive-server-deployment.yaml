@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reactive-server-deployment
+spec: 
+  replicas: 4
+  selector:
+    matchLabels: 
+      component: reactive-server
+  template:
+    metadata:
+      labels:
+        component: reactive-server
+    spec: 
+      containers:
+        - name: reaavtive-web
+          image: vinaykumar6/reactive-server-demo
+          ports: 
+            - containerPort: 8080
+           
